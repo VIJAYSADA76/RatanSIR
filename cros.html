@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Insert title here</title>
+<script>
+    async function func() {
+        const responce = await fetch('http://localhost:5151/api/v1/getNames');
+        if (responce.ok){
+            const names = await responce.json();
+            document.getElementById("demo").innerHTML= names;
+        }
+        else{
+           document.getElementById( "demo").innerHTML= "Failed To Fetch  names";
+        }
+    }
+    
+</script>
+</head>
+<body>
+<button type="button" onClick= " func()" >Click me</button>
+<p id="demo"> </p>
+</body>
+</html>
